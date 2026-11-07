@@ -158,7 +158,7 @@ An interactive web application was developed using Streamlit to demonstrate and 
 
 The application loads previously trained models and evaluates the uploaded test dataset without retraining the models.
 
-**Live Streamlit Application:** [Add your deployed Streaml
+**Live Streamlit Application:** https://credit-card-fraud-detection-q3xmnhprzp2uxfhmgkverd.streamlit.app/
 
 ## 6. Technologies Used
 
