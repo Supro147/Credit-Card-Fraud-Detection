@@ -18,10 +18,6 @@ from sklearn.metrics import (
 )
 
 
-# ============================================================
-# 1. PAGE CONFIGURATION
-# ============================================================
-
 st.set_page_config(
     page_title="Credit Card Fraud Detection",
     page_icon="💳",
@@ -29,11 +25,9 @@ st.set_page_config(
 )
 
 
-# ============================================================
-# 2. HEADER
-# ============================================================
 
-st.title("💳 Credit Card Fraud Detection")
+
+st.title("Credit Card Fraud Detection")
 st.markdown(
     """
     ### Machine Learning Classification Dashboard
@@ -47,11 +41,7 @@ st.markdown(
 st.divider()
 
 
-# ============================================================
-# 3. DATASET OVERVIEW
-# ============================================================
-
-st.header("📊 Dataset Overview")
+st.header("Dataset Overview")
 
 col1, col2, col3, col4 = st.columns(4)
 
@@ -82,12 +72,7 @@ st.caption(
 
 st.divider()
 
-
-# ============================================================
-# 4. TRAINED MODEL PERFORMANCE
-# ============================================================
-
-st.header("🏆 Trained Model Performance")
+st.header("Trained Model Performance")
 
 st.markdown(
     """
@@ -147,10 +132,6 @@ st.dataframe(
 )
 
 
-# ============================================================
-# 5. MODEL PERFORMANCE CHART
-# ============================================================
-
 st.subheader("Model Performance Comparison")
 
 chart_data = comparison_df.set_index("Model")[
@@ -165,9 +146,6 @@ st.info(
 )
 
 
-# ============================================================
-# 6. BEST MODEL SUMMARY
-# ============================================================
 
 st.subheader("Overall Best Performing Model")
 
@@ -203,10 +181,6 @@ st.markdown(
 
 st.divider()
 
-
-# ============================================================
-# 7. MODEL LOADING
-# ============================================================
 
 MODEL_PATH = "model"
 
@@ -246,11 +220,7 @@ except Exception as e:
     st.stop()
 
 
-# ============================================================
-# 8. TEST DATASET UPLOAD
-# ============================================================
-
-st.header("🧪 Test Your Models")
+st.header("Test Your Models")
 
 st.markdown(
     """
@@ -268,11 +238,8 @@ uploaded_file = st.file_uploader(
 )
 
 
-# ============================================================
-# 9. MODEL SELECTION
-# ============================================================
 
-st.sidebar.title("⚙️ Model Configuration")
+st.sidebar.title("Model Configuration")
 
 selected_model = st.sidebar.selectbox(
     "Select Classification Model",
@@ -293,10 +260,6 @@ st.sidebar.markdown(
     """
 )
 
-
-# ============================================================
-# 10. PROCESS UPLOADED DATA
-# ============================================================
 
 if uploaded_file is not None:
 
@@ -400,10 +363,6 @@ if uploaded_file is not None:
 
         y = y.astype(int)
 
-        # ====================================================
-        # 11. EVALUATE ALL FIVE MODELS
-        # ====================================================
-
         st.subheader("Model Performance on Uploaded Data")
 
         uploaded_results = {}
@@ -460,10 +419,6 @@ if uploaded_file is not None:
         )
 
 
-        # ====================================================
-        # 12. SELECTED MODEL EVALUATION
-        # ====================================================
-
         st.divider()
 
         st.subheader(
@@ -501,10 +456,6 @@ if uploaded_file is not None:
         selected_mcc = matthews_corrcoef(y, y_pred)
 
 
-        # ====================================================
-        # 13. DISPLAY SIX METRICS
-        # ====================================================
-
         col1, col2, col3 = st.columns(3)
 
         col1.metric(
@@ -538,11 +489,6 @@ if uploaded_file is not None:
             "MCC Score",
             f"{selected_mcc:.4f}"
         )
-
-
-        # ====================================================
-        # 14. CONFUSION MATRIX
-        # ====================================================
 
         st.subheader("Confusion Matrix")
 
@@ -581,11 +527,6 @@ if uploaded_file is not None:
 
         plt.close(fig)
 
-
-        # ====================================================
-        # 15. CLASSIFICATION REPORT
-        # ====================================================
-
         st.subheader("Classification Report")
 
         report = classification_report(
@@ -608,9 +549,6 @@ if uploaded_file is not None:
         )
 
 
-        # ====================================================
-        # 16. SUCCESS MESSAGE
-        # ====================================================
 
         st.success(
             f"Evaluation completed successfully using "
@@ -631,10 +569,6 @@ else:
         "model evaluation, confusion matrix and classification report."
     )
 
-
-# ============================================================
-# 17. FOOTER
-# ============================================================
 
 st.divider()
 
