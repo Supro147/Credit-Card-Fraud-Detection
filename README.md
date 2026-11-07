@@ -76,7 +76,7 @@ Feature scaling using StandardScaler was applied within the pipelines for Logist
 
 ## 3. GitHub Repository Link
 
-**GitHub Repository:** [Add your GitHub repository URL here]
+**GitHub Repository:** https://github.com/Supro147/Credit-Card-Fraud-Detection
 
 The repository contains:
 
@@ -158,7 +158,7 @@ An interactive web application was developed using Streamlit to demonstrate and 
 
 The application loads previously trained models and evaluates the uploaded test dataset without retraining the models.
 
-**Live Streamlit Application:** [Add your deployed Streamlit application URL here]
+**Live Streamlit Application:** [Add your deployed Streaml
 
 ## 6. Technologies Used
 
